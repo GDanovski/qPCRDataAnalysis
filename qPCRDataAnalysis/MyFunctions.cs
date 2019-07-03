@@ -76,11 +76,16 @@ namespace qPCRDataAnalysis
                     if (dict.ContainsKey(key))
                     {
                         dict[key].Series.Add(val.Value);
+                        dict[key].Experiments.Add(val.Experiment.ToString());
                     }
                     else
                     {
                         val.Series = new List<double>();
                         val.Series.Add(val.Value);
+
+                        val.Experiments = new List<string>();
+                        val.Experiments.Add(val.Experiment.ToString());
+
                         dict.Add(key, val);
                     }
                 }
@@ -246,7 +251,7 @@ namespace qPCRDataAnalysis
                     if (val.Condition == str)
                     {
                         row[val.Gene] = val.Value;
-                        rowStDev[val.Gene] = val.StDev;
+                        rowStDev[val.Gene] = val.StDev.ToString() + " ("+ string.Join(",", val.Experiments) +")";
                     }
                 //add the rows to the tables
                 dt.Rows.Add(row);
@@ -301,7 +306,7 @@ namespace qPCRDataAnalysis
                     if (val.TimePoint == str)
                     {
                         row[val.Gene] = val.Value;
-                        rowStDev[val.Gene] = val.StDev;
+                        rowStDev[val.Gene] = val.StDev.ToString() + " (" + string.Join(",", val.Experiments) + ")";
                     }
                 //add the rows to the tables
                 dt.Rows.Add(row);
@@ -356,7 +361,7 @@ namespace qPCRDataAnalysis
                     if (val.TimePoint == str)
                     {
                         row[val.Condition] = val.Value;
-                        rowStDev[val.Condition] = val.StDev;
+                        rowStDev[val.Condition] = val.StDev.ToString() + " (" + string.Join(",", val.Experiments) + ")";
                     }
                 //add the rows to the tables
                 dt.Rows.Add(row);
@@ -411,7 +416,7 @@ namespace qPCRDataAnalysis
                     if (val.Gene == str)
                     {
                         row[val.Condition] = val.Value;
-                        rowStDev[val.Condition] = val.StDev;
+                        rowStDev[val.Condition] = val.StDev.ToString() + " (" + string.Join(",", val.Experiments) + ")";
                     }
                 //add the rows to the tables
                 dt.Rows.Add(row);
@@ -466,7 +471,7 @@ namespace qPCRDataAnalysis
                     if (val.Gene == str)
                     {
                         row[val.TimePoint] = val.Value;
-                        rowStDev[val.TimePoint] = val.StDev;
+                        rowStDev[val.TimePoint] = val.StDev.ToString() + " (" + string.Join(",", val.Experiments) + ")";
                     }
                 //add the rows to the tables
                 dt.Rows.Add(row);
@@ -521,7 +526,7 @@ namespace qPCRDataAnalysis
                     if (val.Condition == str)
                     {
                         row[val.TimePoint] = val.Value;
-                        rowStDev[val.TimePoint] = val.StDev;
+                        rowStDev[val.TimePoint] = val.StDev.ToString() + " (" + string.Join(",", val.Experiments) + ")";
                     }
                 //add the rows to the tables
                 dt.Rows.Add(row);

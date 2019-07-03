@@ -12,6 +12,7 @@ namespace qPCRDataAnalysis
         private string _Gene;
         private double _Value;
         private List<double> _Series;
+        private List<string> _Experiments;
         private double _StDev;
         /// <summary>
         /// Create new empty class
@@ -102,6 +103,14 @@ namespace qPCRDataAnalysis
             set { this._Series = value; }
         }
         /// <summary>
+        /// Get or set the experiment indexes
+        /// </summary>
+        public List<string> Experiments
+        {
+            get { return _Experiments; }
+            set { this._Experiments = value; }
+        }
+        /// <summary>
         /// Duplicate the current class
         /// </summary>
         /// <returns>Copy of this class</returns>
@@ -110,6 +119,7 @@ namespace qPCRDataAnalysis
             MyData newStorage = new MyData();
 
             newStorage.Experiment = this._Experiment;
+            newStorage.Experiments = this._Experiments;
             newStorage.TimePoint = this._TimePoint;
             newStorage.CellLine = this._CellLine;
             newStorage.Condition = this._Condition;
