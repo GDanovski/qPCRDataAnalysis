@@ -153,6 +153,7 @@ namespace qPCRDataAnalysis
                 {
                     refSet.Add(val.Gene, val.Value);
                 }
+                
             }
             //loop the data and sort
             foreach (var val in data)
@@ -166,7 +167,7 @@ namespace qPCRDataAnalysis
             }
             //calculate the value based on the following formula: value = 2^(-valN-valRef)
             valSet = calculateValues(valSet, refSet);
-            ///Load the data to data tables
+            //Load the data to data tables
             if (switchXY)
             {
                 if (time != "")
@@ -201,7 +202,7 @@ namespace qPCRDataAnalysis
             foreach (var val in valSet)
                 if (refSet.ContainsKey(val.Gene))
                 {
-                    double value = Math.Pow(2, -(val.Value - refSet[val.Gene]));
+                    double value = Math.Pow(2, (-val.Value - refSet[val.Gene]));
 
                     MyData newVal = val.Duplicate();
                     newVal.Value = value;
