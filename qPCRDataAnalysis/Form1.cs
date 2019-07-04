@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace qPCRDataAnalysis
@@ -31,6 +33,7 @@ namespace qPCRDataAnalysis
             //Add event when the form is resized
             this.Resize += Form1_Resize;
             //try to load the input file
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("de-DE");
             LoadInputData();
             //add events to the filter comboboxes
             comboBox_Gene1.SelectedIndexChanged += ComboBox_SelectedIndexChanged;

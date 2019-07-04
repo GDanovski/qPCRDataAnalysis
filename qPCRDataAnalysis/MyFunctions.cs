@@ -143,6 +143,7 @@ namespace qPCRDataAnalysis
             //prepare variables
             Dictionary<string, double> refSet = new Dictionary<string, double>();
             List<MyData> valSet = new List<MyData>();
+
             //loop the set in order to find the refference genes
             foreach (var val in data)
             {
@@ -152,8 +153,7 @@ namespace qPCRDataAnalysis
                     !refSet.ContainsKey(val.Gene))
                 {
                     refSet.Add(val.Gene, val.Value);
-                }
-                
+                }                
             }
             //loop the data and sort
             foreach (var val in data)
@@ -202,8 +202,7 @@ namespace qPCRDataAnalysis
             foreach (var val in valSet)
                 if (refSet.ContainsKey(val.Gene))
                 {
-                    double value = Math.Pow(2, -(val.Value - refSet[val.Gene]));
-
+                    double value = Math.Pow((double)2, -(val.Value - refSet[val.Gene]));
                     MyData newVal = val.Duplicate();
                     newVal.Value = value;
                     result.Add(newVal);
