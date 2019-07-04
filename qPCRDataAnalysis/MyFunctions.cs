@@ -165,7 +165,7 @@ namespace qPCRDataAnalysis
                 if (condition != "" && val.Condition == condition)
                     valSet.Add(val);
             }
-            //calculate the value based on the following formula: value = 2^(-valN-valRef)
+            //calculate the value based on the following formula: value = 2^-(valN-valRef)
             valSet = calculateValues(valSet, refSet);
             //Load the data to data tables
             if (switchXY)
@@ -190,7 +190,7 @@ namespace qPCRDataAnalysis
             return null;
         }
         /// <summary>
-        /// Calculate the value based on the following formula: value = 2^(-valN-valRef)
+        /// Calculate the value based on the following formula: value = 2^-(valN-valRef)
         /// </summary>
         /// <param name="valSet"></param>
         /// <param name="refSet"></param>
@@ -202,7 +202,7 @@ namespace qPCRDataAnalysis
             foreach (var val in valSet)
                 if (refSet.ContainsKey(val.Gene))
                 {
-                    double value = Math.Pow(2, (-val.Value - refSet[val.Gene]));
+                    double value = Math.Pow(2, -(val.Value - refSet[val.Gene]));
 
                     MyData newVal = val.Duplicate();
                     newVal.Value = value;
