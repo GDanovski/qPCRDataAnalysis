@@ -47,7 +47,6 @@ namespace qPCRDataAnalysis
             dataGridView1.DragOver += dataGridView1_DragOver;
             dataGridView1.DragDrop += dataGridView1_DragDrop;
             dataGridView1.ColumnDisplayIndexChanged += DataGridView1_ColumnDisplayIndexChanged;
-            dataGridView1.UserDeletingRow += Row_Deleting;
         }
         /// <summary>
         /// Event that occures when the form is resized
@@ -364,16 +363,32 @@ namespace qPCRDataAnalysis
 
         }
         /// <summary>
-        /// This events is activated by data table row deletion
+        /// This events  activate data table column deletion
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Row_Deleting(object sender, DataGridViewRowCancelEventArgs e)
+        private void button_DeleteColumn_Click(object sender, EventArgs e)
         {
-            //get the row index from dataGridView1
-            int ind = e.Row.Index;
-            //delete the corresponding row from dataGridView2
-            dataGridView2.Rows.RemoveAt(ind);
+            int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+            if(columnIndex>-1 && columnIndex < dataGridView1.ColumnCount)
+            {
+                dataGridView1.Columns.RemoveAt(columnIndex);
+                dataGridView2.Columns.RemoveAt(columnIndex);
+            }
+        }
+        /// <summary>
+        /// This events  activate data table row deletion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_deleteRow_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dataGridView1.CurrentCell.RowIndex;
+            if (rowIndex > -1 && rowIndex < dataGridView1.RowCount)
+            {
+                dataGridView1.Rows.RemoveAt(rowIndex);
+                dataGridView2.Rows.RemoveAt(rowIndex);
+            }
         }
     }
 }

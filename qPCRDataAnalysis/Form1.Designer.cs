@@ -55,6 +55,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.button_DeleteColumn = new System.Windows.Forms.Button();
+            this.button_deleteRow = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -68,6 +70,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button_deleteRow);
+            this.panel1.Controls.Add(this.button_DeleteColumn);
             this.panel1.Controls.Add(this.button_Export);
             this.panel1.Controls.Add(this.button_switchXY);
             this.panel1.Controls.Add(this.button_Process);
@@ -77,14 +81,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 450);
+            this.panel1.Size = new System.Drawing.Size(384, 450);
             this.panel1.TabIndex = 0;
             // 
             // button_Export
             // 
-            this.button_Export.Location = new System.Drawing.Point(270, 289);
+            this.button_Export.Location = new System.Drawing.Point(236, 290);
             this.button_Export.Name = "button_Export";
-            this.button_Export.Size = new System.Drawing.Size(75, 23);
+            this.button_Export.Size = new System.Drawing.Size(88, 23);
             this.button_Export.TabIndex = 5;
             this.button_Export.Text = "Export";
             this.button_Export.UseVisualStyleBackColor = true;
@@ -92,9 +96,9 @@
             // 
             // button_switchXY
             // 
-            this.button_switchXY.Location = new System.Drawing.Point(189, 289);
+            this.button_switchXY.Location = new System.Drawing.Point(50, 319);
             this.button_switchXY.Name = "button_switchXY";
-            this.button_switchXY.Size = new System.Drawing.Size(75, 23);
+            this.button_switchXY.Size = new System.Drawing.Size(87, 23);
             this.button_switchXY.TabIndex = 4;
             this.button_switchXY.Text = "switchXY";
             this.button_switchXY.UseVisualStyleBackColor = true;
@@ -102,9 +106,9 @@
             // 
             // button_Process
             // 
-            this.button_Process.Location = new System.Drawing.Point(108, 289);
+            this.button_Process.Location = new System.Drawing.Point(143, 290);
             this.button_Process.Name = "button_Process";
-            this.button_Process.Size = new System.Drawing.Size(75, 23);
+            this.button_Process.Size = new System.Drawing.Size(87, 23);
             this.button_Process.TabIndex = 3;
             this.button_Process.Text = "Process";
             this.button_Process.UseVisualStyleBackColor = true;
@@ -112,9 +116,9 @@
             // 
             // button_Load
             // 
-            this.button_Load.Location = new System.Drawing.Point(25, 289);
+            this.button_Load.Location = new System.Drawing.Point(49, 290);
             this.button_Load.Name = "button_Load";
-            this.button_Load.Size = new System.Drawing.Size(75, 23);
+            this.button_Load.Size = new System.Drawing.Size(88, 23);
             this.button_Load.TabIndex = 2;
             this.button_Load.Text = "Load";
             this.button_Load.UseVisualStyleBackColor = true;
@@ -258,21 +262,22 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(375, 0);
+            this.panel2.Location = new System.Drawing.Point(384, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(623, 212);
+            this.panel2.Size = new System.Drawing.Size(614, 212);
             this.panel2.TabIndex = 2;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(619, 170);
+            this.dataGridView1.Size = new System.Drawing.Size(610, 170);
             this.dataGridView1.TabIndex = 1;
             // 
             // panel3
@@ -282,7 +287,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(619, 38);
+            this.panel3.Size = new System.Drawing.Size(610, 38);
             this.panel3.TabIndex = 0;
             // 
             // label7
@@ -303,9 +308,9 @@
             this.panel4.Controls.Add(this.dataGridView2);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(375, 212);
+            this.panel4.Location = new System.Drawing.Point(384, 212);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(623, 238);
+            this.panel4.Size = new System.Drawing.Size(614, 238);
             this.panel4.TabIndex = 3;
             // 
             // dataGridView2
@@ -316,7 +321,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 38);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(619, 196);
+            this.dataGridView2.Size = new System.Drawing.Size(610, 196);
             this.dataGridView2.TabIndex = 1;
             // 
             // panel5
@@ -326,7 +331,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(619, 38);
+            this.panel5.Size = new System.Drawing.Size(610, 38);
             this.panel5.TabIndex = 0;
             // 
             // label8
@@ -340,6 +345,26 @@
             this.label8.Size = new System.Drawing.Size(112, 17);
             this.label8.TabIndex = 0;
             this.label8.Text = "StDev.S table:";
+            // 
+            // button_DeleteColumn
+            // 
+            this.button_DeleteColumn.Location = new System.Drawing.Point(143, 319);
+            this.button_DeleteColumn.Name = "button_DeleteColumn";
+            this.button_DeleteColumn.Size = new System.Drawing.Size(88, 23);
+            this.button_DeleteColumn.TabIndex = 6;
+            this.button_DeleteColumn.Text = "Delete Column";
+            this.button_DeleteColumn.UseVisualStyleBackColor = true;
+            this.button_DeleteColumn.Click += new System.EventHandler(this.button_DeleteColumn_Click);
+            // 
+            // button_deleteRow
+            // 
+            this.button_deleteRow.Location = new System.Drawing.Point(236, 319);
+            this.button_deleteRow.Name = "button_deleteRow";
+            this.button_deleteRow.Size = new System.Drawing.Size(88, 23);
+            this.button_deleteRow.TabIndex = 7;
+            this.button_deleteRow.Text = "Delete Row";
+            this.button_deleteRow.UseVisualStyleBackColor = true;
+            this.button_deleteRow.Click += new System.EventHandler(this.button_deleteRow_Click);
             // 
             // Form1
             // 
@@ -400,6 +425,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button_Export;
+        private System.Windows.Forms.Button button_DeleteColumn;
+        private System.Windows.Forms.Button button_deleteRow;
     }
 }
 
