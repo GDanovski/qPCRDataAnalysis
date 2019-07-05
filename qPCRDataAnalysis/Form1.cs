@@ -47,13 +47,14 @@ namespace qPCRDataAnalysis
             dataGridView1.DragOver += dataGridView1_DragOver;
             dataGridView1.DragDrop += dataGridView1_DragDrop;
             dataGridView1.ColumnDisplayIndexChanged += DataGridView1_ColumnDisplayIndexChanged;
+            dataGridView1.UserDeletingRow += Row_Deleting;
         }
         /// <summary>
         /// Event that occures when the form is resized
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Form1_Resize(object sender,EventArgs e)
+        private void Form1_Resize(object sender, EventArgs e)
         {
             //data grid panel height must be 1/2 of the screen size
             this.panel2.Height = this.panel1.Height / 2;
@@ -187,11 +188,11 @@ namespace qPCRDataAnalysis
             if (this.comboBox_Condition1.SelectedIndex != 0)
                 condition = this.comboBox_Condition1.Text;
             //Calculate the data tables
-            DataTable[] dts=  MyFunctions.ProcessTheData(
+            DataTable[] dts = MyFunctions.ProcessTheData(
                 this.data, refGene, refTime, refCondition, gene, time, condition, this.switchXY);
             //if the data tables are ok - load them to the data grid views
             if (dts != null)
-            {                
+            {
                 this.dataGridView1.DataSource = dts[0];
                 this.dataGridView2.DataSource = dts[1];
             }
@@ -307,7 +308,7 @@ namespace qPCRDataAnalysis
         }
         //reorder the columns
         private void DataGridView1_ColumnDisplayIndexChanged(object sender, DataGridViewColumnEventArgs e)
-        {          
+        {
             //check is the data calculated
             if (this.dataGridView1.DataSource == null || this.dataGridView2.DataSource == null) return;
             //Get column name and index from data grid view 1
@@ -321,7 +322,7 @@ namespace qPCRDataAnalysis
                     {
                         this.dataGridView2.Columns[i].DisplayIndex = ind;
                     }
-            }            
+            }
         }
         /// <summary>
         /// This event is activated when the button Export is clicked
@@ -333,7 +334,7 @@ namespace qPCRDataAnalysis
             //check is the data calculated
             if (dataGridView1.DataSource == null || dataGridView2.DataSource == null) return;
             //open file save dialog and set the settings
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();     
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Title = "Save CSV Files";
             saveFileDialog1.CheckFileExists = false;
             saveFileDialog1.OverwritePrompt = true;
@@ -347,7 +348,7 @@ namespace qPCRDataAnalysis
             {
                 //get the file name
                 string dir = saveFileDialog1.FileName;
-                if(dir.Contains("."))
+                if (dir.Contains("."))
                     dir = dir.Substring(0, dir.LastIndexOf("."));
                 //export the files
                 try
@@ -362,6 +363,17 @@ namespace qPCRDataAnalysis
             }
 
         }
-        
-    }    
+        /// <summary>
+        /// This events is activated by data table row deletion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Row_Deleting(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            //get the row index from dataGridView1
+            int ind = e.Row.Index;
+            //delete the corresponding row from dataGridView2
+            dataGridView2.Rows.RemoveAt(ind);
+        }
+    }
 }

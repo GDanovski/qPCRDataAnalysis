@@ -29,38 +29,38 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_Export = new System.Windows.Forms.Button();
+            this.button_switchXY = new System.Windows.Forms.Button();
+            this.button_Process = new System.Windows.Forms.Button();
+            this.button_Load = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox_TimePoint1 = new System.Windows.Forms.ComboBox();
-            this.comboBox_Condition1 = new System.Windows.Forms.ComboBox();
-            this.comboBox_Gene1 = new System.Windows.Forms.ComboBox();
-            this.comboBox_TimePoint2 = new System.Windows.Forms.ComboBox();
-            this.comboBox_Condition2 = new System.Windows.Forms.ComboBox();
             this.comboBox_Gene2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Condition2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_TimePoint2 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox_Gene1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Condition1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_TimePoint1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button_Load = new System.Windows.Forms.Button();
-            this.button_Process = new System.Windows.Forms.Button();
-            this.button_switchXY = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.button_Export = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel5.SuspendLayout();
@@ -80,31 +80,45 @@
             this.panel1.Size = new System.Drawing.Size(375, 450);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // button_Export
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(375, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(623, 212);
-            this.panel2.TabIndex = 2;
+            this.button_Export.Location = new System.Drawing.Point(270, 289);
+            this.button_Export.Name = "button_Export";
+            this.button_Export.Size = new System.Drawing.Size(75, 23);
+            this.button_Export.TabIndex = 5;
+            this.button_Export.Text = "Export";
+            this.button_Export.UseVisualStyleBackColor = true;
+            this.button_Export.Click += new System.EventHandler(this.button_Export_Click);
             // 
-            // groupBox1
+            // button_switchXY
             // 
-            this.groupBox1.Controls.Add(this.comboBox_Gene1);
-            this.groupBox1.Controls.Add(this.comboBox_Condition1);
-            this.groupBox1.Controls.Add(this.comboBox_TimePoint1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 118);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filters:";
+            this.button_switchXY.Location = new System.Drawing.Point(189, 289);
+            this.button_switchXY.Name = "button_switchXY";
+            this.button_switchXY.Size = new System.Drawing.Size(75, 23);
+            this.button_switchXY.TabIndex = 4;
+            this.button_switchXY.Text = "switchXY";
+            this.button_switchXY.UseVisualStyleBackColor = true;
+            this.button_switchXY.Click += new System.EventHandler(this.button_switchXY_Click);
+            // 
+            // button_Process
+            // 
+            this.button_Process.Location = new System.Drawing.Point(108, 289);
+            this.button_Process.Name = "button_Process";
+            this.button_Process.Size = new System.Drawing.Size(75, 23);
+            this.button_Process.TabIndex = 3;
+            this.button_Process.Text = "Process";
+            this.button_Process.UseVisualStyleBackColor = true;
+            this.button_Process.Click += new System.EventHandler(this.button_Process_Click);
+            // 
+            // button_Load
+            // 
+            this.button_Load.Location = new System.Drawing.Point(25, 289);
+            this.button_Load.Name = "button_Load";
+            this.button_Load.Size = new System.Drawing.Size(75, 23);
+            this.button_Load.TabIndex = 2;
+            this.button_Load.Text = "Load";
+            this.button_Load.UseVisualStyleBackColor = true;
+            this.button_Load.Click += new System.EventHandler(this.button_Load_Click);
             // 
             // groupBox2
             // 
@@ -121,50 +135,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reference:";
             // 
-            // label1
+            // comboBox_Gene2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Time Point:";
+            this.comboBox_Gene2.FormattingEnabled = true;
+            this.comboBox_Gene2.Location = new System.Drawing.Point(85, 79);
+            this.comboBox_Gene2.Name = "comboBox_Gene2";
+            this.comboBox_Gene2.Size = new System.Drawing.Size(262, 21);
+            this.comboBox_Gene2.TabIndex = 6;
             // 
-            // label2
+            // comboBox_Condition2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Condition:";
+            this.comboBox_Condition2.FormattingEnabled = true;
+            this.comboBox_Condition2.Location = new System.Drawing.Point(85, 52);
+            this.comboBox_Condition2.Name = "comboBox_Condition2";
+            this.comboBox_Condition2.Size = new System.Drawing.Size(262, 21);
+            this.comboBox_Condition2.TabIndex = 5;
             // 
-            // label3
+            // comboBox_TimePoint2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Gene:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Time Point:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Condition:";
+            this.comboBox_TimePoint2.FormattingEnabled = true;
+            this.comboBox_TimePoint2.Location = new System.Drawing.Point(85, 25);
+            this.comboBox_TimePoint2.Name = "comboBox_TimePoint2";
+            this.comboBox_TimePoint2.Size = new System.Drawing.Size(262, 21);
+            this.comboBox_TimePoint2.TabIndex = 4;
             // 
             // label6
             // 
@@ -175,21 +168,38 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Gene:";
             // 
-            // comboBox_TimePoint1
+            // label5
             // 
-            this.comboBox_TimePoint1.FormattingEnabled = true;
-            this.comboBox_TimePoint1.Location = new System.Drawing.Point(85, 28);
-            this.comboBox_TimePoint1.Name = "comboBox_TimePoint1";
-            this.comboBox_TimePoint1.Size = new System.Drawing.Size(262, 21);
-            this.comboBox_TimePoint1.TabIndex = 3;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Condition:";
             // 
-            // comboBox_Condition1
+            // label4
             // 
-            this.comboBox_Condition1.FormattingEnabled = true;
-            this.comboBox_Condition1.Location = new System.Drawing.Point(85, 55);
-            this.comboBox_Condition1.Name = "comboBox_Condition1";
-            this.comboBox_Condition1.Size = new System.Drawing.Size(262, 21);
-            this.comboBox_Condition1.TabIndex = 4;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Time Point:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBox_Gene1);
+            this.groupBox1.Controls.Add(this.comboBox_Condition1);
+            this.groupBox1.Controls.Add(this.comboBox_TimePoint1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(353, 118);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filters:";
             // 
             // comboBox_Gene1
             // 
@@ -199,29 +209,71 @@
             this.comboBox_Gene1.Size = new System.Drawing.Size(262, 21);
             this.comboBox_Gene1.TabIndex = 5;
             // 
-            // comboBox_TimePoint2
+            // comboBox_Condition1
             // 
-            this.comboBox_TimePoint2.FormattingEnabled = true;
-            this.comboBox_TimePoint2.Location = new System.Drawing.Point(85, 25);
-            this.comboBox_TimePoint2.Name = "comboBox_TimePoint2";
-            this.comboBox_TimePoint2.Size = new System.Drawing.Size(262, 21);
-            this.comboBox_TimePoint2.TabIndex = 4;
+            this.comboBox_Condition1.FormattingEnabled = true;
+            this.comboBox_Condition1.Location = new System.Drawing.Point(85, 55);
+            this.comboBox_Condition1.Name = "comboBox_Condition1";
+            this.comboBox_Condition1.Size = new System.Drawing.Size(262, 21);
+            this.comboBox_Condition1.TabIndex = 4;
             // 
-            // comboBox_Condition2
+            // comboBox_TimePoint1
             // 
-            this.comboBox_Condition2.FormattingEnabled = true;
-            this.comboBox_Condition2.Location = new System.Drawing.Point(85, 52);
-            this.comboBox_Condition2.Name = "comboBox_Condition2";
-            this.comboBox_Condition2.Size = new System.Drawing.Size(262, 21);
-            this.comboBox_Condition2.TabIndex = 5;
+            this.comboBox_TimePoint1.FormattingEnabled = true;
+            this.comboBox_TimePoint1.Location = new System.Drawing.Point(85, 28);
+            this.comboBox_TimePoint1.Name = "comboBox_TimePoint1";
+            this.comboBox_TimePoint1.Size = new System.Drawing.Size(262, 21);
+            this.comboBox_TimePoint1.TabIndex = 3;
             // 
-            // comboBox_Gene2
+            // label3
             // 
-            this.comboBox_Gene2.FormattingEnabled = true;
-            this.comboBox_Gene2.Location = new System.Drawing.Point(85, 79);
-            this.comboBox_Gene2.Name = "comboBox_Gene2";
-            this.comboBox_Gene2.Size = new System.Drawing.Size(262, 21);
-            this.comboBox_Gene2.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Gene:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Condition:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Time Point:";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(375, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(623, 212);
+            this.panel2.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 38);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(619, 170);
+            this.dataGridView1.TabIndex = 1;
             // 
             // panel3
             // 
@@ -244,49 +296,6 @@
             this.label7.Size = new System.Drawing.Size(108, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Results table:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(619, 170);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // button_Load
-            // 
-            this.button_Load.Location = new System.Drawing.Point(25, 289);
-            this.button_Load.Name = "button_Load";
-            this.button_Load.Size = new System.Drawing.Size(75, 23);
-            this.button_Load.TabIndex = 2;
-            this.button_Load.Text = "Load";
-            this.button_Load.UseVisualStyleBackColor = true;
-            this.button_Load.Click += new System.EventHandler(this.button_Load_Click);
-            // 
-            // button_Process
-            // 
-            this.button_Process.Location = new System.Drawing.Point(108, 289);
-            this.button_Process.Name = "button_Process";
-            this.button_Process.Size = new System.Drawing.Size(75, 23);
-            this.button_Process.TabIndex = 3;
-            this.button_Process.Text = "Process";
-            this.button_Process.UseVisualStyleBackColor = true;
-            this.button_Process.Click += new System.EventHandler(this.button_Process_Click);
-            // 
-            // button_switchXY
-            // 
-            this.button_switchXY.Location = new System.Drawing.Point(189, 289);
-            this.button_switchXY.Name = "button_switchXY";
-            this.button_switchXY.Size = new System.Drawing.Size(75, 23);
-            this.button_switchXY.TabIndex = 4;
-            this.button_switchXY.Text = "switchXY";
-            this.button_switchXY.UseVisualStyleBackColor = true;
-            this.button_switchXY.Click += new System.EventHandler(this.button_switchXY_Click);
             // 
             // panel4
             // 
@@ -332,16 +341,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "StDev.S table:";
             // 
-            // button_Export
-            // 
-            this.button_Export.Location = new System.Drawing.Point(270, 289);
-            this.button_Export.Name = "button_Export";
-            this.button_Export.Size = new System.Drawing.Size(75, 23);
-            this.button_Export.TabIndex = 5;
-            this.button_Export.Text = "Export";
-            this.button_Export.UseVisualStyleBackColor = true;
-            this.button_Export.Click += new System.EventHandler(this.button_Export_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,14 +355,14 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel5.ResumeLayout(false);
