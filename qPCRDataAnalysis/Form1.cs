@@ -32,8 +32,9 @@ namespace qPCRDataAnalysis
             this.panel2.Height = this.panel1.Height / 2;
             //Add event when the form is resized
             this.Resize += Form1_Resize;
-            //try to load the input file
+            //change the culture to german
             Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("de-DE");
+            //try to load the input file
             LoadInputData();
             //add events to the filter comboboxes
             comboBox_Gene1.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
